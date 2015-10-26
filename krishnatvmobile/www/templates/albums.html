@@ -1,0 +1,16 @@
+<ion-view view-title="Browse">
+  <ion-content>
+    <div class="list">
+
+        <a ng-repeat="item in items" 
+           href="#/app/albums/{{item.id}}"
+           class="item item-thumbnail-left">
+
+            <img ng-src="{{ item.image }}">
+            <h2>{{ item.title }}</h2>
+            <h4>{{ item.album.title }}</h4>
+        </a>
+
+    </div>
+   </ion-content>
+</ion-view>

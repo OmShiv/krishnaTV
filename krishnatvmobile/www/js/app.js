@@ -41,14 +41,25 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     }
   })
 
-  .state('app.browse', {
-      url: '/browse',
+  .state('app.albums', {
+      url: '/albums',
       views: {
         'menuContent': {
-          templateUrl: 'templates/browse.html'
+          templateUrl: 'templates/albums.html',
+          controller: 'AlbumsCtrl'
         }
       }
     })
+.state('app.album', {
+      url: '/albums/:albumId',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/album.html',
+          controller: 'AlbumCtrl'
+        }
+      }
+    })
+
     .state('app.playlists', {
       url: '/playlists',
       views: {
