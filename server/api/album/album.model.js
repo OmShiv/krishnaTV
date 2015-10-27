@@ -7,7 +7,7 @@ var AlbumSchema = new Schema({
 	id: String,
   title: String,
   artist: String,
-  category: []
+  tracks: []
 });
 
 module.exports = mongoose.model('Album', AlbumSchema);

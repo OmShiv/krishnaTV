@@ -1,5 +1,10 @@
 <ion-view view-title="Album">
   <ion-content>
-    <h1>Album</h1>
+    <h1>{{album.title}}</h1>
+    <ion-list>
+      <ion-item ng-repeat="track in album.tracks" ng-click="playSong(track)">
+        {{track.title}}
+      </ion-item>
+    </ion-list>
   </ion-content>
 </ion-view>

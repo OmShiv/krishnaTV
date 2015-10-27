@@ -16,6 +16,9 @@ var Album = require('./album.model');
 exports.index = function(req, res) {
   Album.find(function (err, albums) {
     if(err) { return handleError(res, err); }
+    res.header('Access-Control-Allow-Origin', "*");     // TODO - Make this more secure!!
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST');
+    res.header('Access-Control-Allow-Headers', 'Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept');
     return res.json(200, albums);
   });
 };
@@ -36,6 +39,9 @@ exports.show = function(req, res) {
   Album.findById(req.params.id, function (err, album) {
     if(err) { return handleError(res, err); }
     if(!album) { return res.send(404); }
+    res.header('Access-Control-Allow-Origin', "*");     // TODO - Make this more secure!!
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST');
+    res.header('Access-Control-Allow-Headers', 'Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept');
     return res.json(album);
   });
 };

@@ -45,7 +45,7 @@ app.get('/scrape', function(req, res){
                                 console.log('pushed one more song');
                                 console.log(JSON.stringify(json, null, 4));
                             }
-                            fs.writeFile('data/_' + album.title + '.json', songList, function(err){
+                            fs.writeFile('data/_' + album.title + '.json', '[' + songList + ']', function(err){
                                 console.log('File successfully written! - Check your project directory for the _' + album.title + '.json file');
                             });
                             console.log('moving to next after adding one');
@@ -74,5 +74,5 @@ app.get('/scrape', function(req, res){
 });
 
 app.listen('8081');
-console.log('Magic happens on port 8081');
+console.log('Magic happens at http://localhost:8081/scrape');
 exports = module.exports = app;

@@ -10,6 +10,7 @@ var User = require('../api/user/user.model');
 var Song = require('../api/song/song.model');
 var Album = require('../api/album/album.model');
 var Category = require('../api/category/category.model');
+var fs = require('fs');
 
 Thing.find({}).remove(function() {
   Thing.create({
@@ -92,27 +93,8 @@ Song.find({}).remove(function() {
 });
 
 Album.find({}).remove(function() {
-  Album.create({
-    id : 'cd01',
-    title : 'Album Title One',
-    artist : 'Artist One',
-    category : ['at01']
-  }, {
-    id : 'cd02',
-    title : 'Album Title Two',
-    artist : 'Artist Two',
-    category : ['at02']
-  }, {
-    id : 'cd03',
-    title : 'Album Title Three',
-    artist : 'Artist One',
-    category : ['at01', 'at02']
-  }, {
-    id : 'cd04',
-    title : 'Album Title Four',
-    artist : 'Artist Two',
-    category : ['at03']
-  });
+  var obj = JSON.parse(fs.readFileSync('/Users/amandogra/Work/playground/krishnaTV/json/data/_consolidated.json', 'utf8'));
+  Album.create(obj);
 });
 
 Category.find({}).remove(function() {
