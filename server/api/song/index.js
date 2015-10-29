@@ -6,7 +6,7 @@ var controller = require('./song.controller');
 var router = express.Router();
 
 router.get('/', controller.index);
-router.get('/songsInAlbum/:id', controller.indexAlbum);
+router.get('/albumsongs/:id', controller.indexAlbum);
 router.get('/:id', controller.show);
 router.post('/', controller.create);
 router.put('/:id', controller.update);

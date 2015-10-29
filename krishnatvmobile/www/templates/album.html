@@ -1,10 +1,13 @@
 <ion-view view-title="Album">
   <ion-content>
-    <h1>{{album.title}}</h1>
+    <div class="item item-image album-art">
+      <img src="{{album.image}}" />
+      <h2 class="album-art-title">{{album.title}}</h2>
+    </div>
     <ion-list>
-      <ion-item ng-repeat="track in album.tracks" ng-click="playSong(track)">
+      <a ng-repeat="track in albumtracks" ng-click="playTrack(track)" music-player="play" add-song="track" class="item">
         {{track.title}}
-      </ion-item>
+      </a>
     </ion-list>
   </ion-content>
 </ion-view>

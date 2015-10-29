@@ -77,11 +77,23 @@ angular.module('starter.controllers', [])
       });
 })
 
-.controller('AlbumCtrl', function($scope, $stateParams, Albums) {
+.controller('AlbumCtrl', function($scope, $stateParams, Albums, Player) {
     Albums.getAlbum($stateParams.albumId)
       .then(function () {
         $scope.album = Albums.selectedAlbum;
+        console.log($scope.album);
+      })
+      .then(function () {
+          Albums.getSongsInAlbum($stateParams.albumId)
+          .then(function () {
+              $scope.albumtracks = Albums.selectedAlbum.tracks;
+              console.log($scope.albumtracks);
+          })
       });
+
+    $scope.playTrack = function (track) {
+        console.log("playing" + track.url);
+    }
 })
 
 

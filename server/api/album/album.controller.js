@@ -36,7 +36,7 @@ exports.indexCategory = function(req, res) {
 
 // Get a single album
 exports.show = function(req, res) {
-  Album.findById(req.params.id, function (err, album) {
+  Album.findOne({"id" : req.params.id}, function (err, album) {
     if(err) { return handleError(res, err); }
     if(!album) { return res.send(404); }
     res.header('Access-Control-Allow-Origin', "*");     // TODO - Make this more secure!!

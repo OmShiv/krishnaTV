@@ -22,9 +22,28 @@
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
     <script src="js/services.js"></script>
+    <script src="lib/sm2/angular-soundmanager2.min.js"></script>
   </head>
 
   <body ng-app="starter">
     <ion-nav-view></ion-nav-view>
+    <ion-footer-bar>
+      <!-- init soundManager2 player -->
+      <sound-manager></sound-manager>
+      <p class="player-small-empty-info" ng-if="!currentPlaying.id">Please select a track to play</p>
+      <div class="player-small" ng-if="!!currentPlaying.id">
+        <div class="seek-base" seek-track>
+          <div class="seek-load" ng-style="{width : ( progress + '%' ) }"></div>
+        </div>
+        <a class="player-small-info" href="#">
+          <img src="venkman.jpg">
+          <h2>{{ currentPlaying.title }}</h2>
+          <p>{{ currentPlaying.artist }}</p>
+        </a>
+        <div pause-music class="ion ion-pause player-button" ng-if="isPlaying"></div>
+        <div play-music class="ion ion-play player-button" ng-if="!isPlaying"></div>
+
+      </div>
+    </ion-footer-bar>
   </body>
 </html>

@@ -17,7 +17,8 @@ app.get('/scrape', function(req, res){
             //get data for each album
             var getDataForAlbum = function () {
                 var selectOption = $(selectElement[counter]);
-                album = { title : "", href : ""};
+                album = { albumid: "", title : "", href : ""};
+                album.albumid = counter;
                 album.href = homeUrl + "/index.php?ext.html=&jz_path=" + selectOption.val();
                 album.title = selectOption.text();
                 //albumList.push(JSON.stringify(album, null, 4))
@@ -33,21 +34,25 @@ app.get('/scrape', function(req, res){
                                 data,
                             songLinkElements = jQ('.jz_track_table_songs_href');
                             for (var i= 0, l=songLinkElements.length; i<l; i++) {
-                                json = { title : "", href : "", duration : "", album: {}};
+                                json = { id: "", title : "", url : "", duration : "", album: {}};
                                 data = jQ(songLinkElements[i]);
                                 title = data.text();
                                 href = data.attr('href');
                                 //TODO: duration
+                                json.id = counter + "_" + i;
                                 json.title = title;
-                                json.href = href;
+                                json.url = homeUrl + href;
                                 json.album = album;
                                 songList.push(JSON.stringify(json, null, 4));
                                 console.log('pushed one more song');
                                 console.log(JSON.stringify(json, null, 4));
                             }
-                            fs.writeFile('data/_' + album.title + '.json', '[' + songList + ']', function(err){
-                                console.log('File successfully written! - Check your project directory for the _' + album.title + '.json file');
+                            fs.writeFile('data/_allSongs.json',  '[' + songList + ']', function(err){
+                                console.log('File successfully written! - Check your project directory for the _allSongs');
                             });
+                            //fs.appendFile('data/_allAlbum.json', JSON.stringify(album, null, 4), function(err){
+                            //  console.log('File successfully written! - Check your project directory for the _allAlbums .json file');
+                            //});
                             console.log('moving to next after adding one');
                             counter++;
                             if (counter < selectElement.length) {

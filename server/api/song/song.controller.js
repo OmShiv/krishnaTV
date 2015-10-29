@@ -1,6 +1,7 @@
 /**
  * Using Rails-like standard naming convention for endpoints.
  * GET     /songs              ->  index
+ * GET     /albumsongs/:id     ->  indexAlbum
  * POST    /songs              ->  create
  * GET     /songs/:id          ->  show
  * PUT     /songs/:id          ->  update
@@ -16,16 +17,23 @@ var Song = require('./song.model');
 exports.index = function(req, res) {
   Song.find(function (err, songs) {
     if(err) { return handleError(res, err); }
+    res.header('Access-Control-Allow-Origin', "*");     // TODO - Make this more secure!!
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST');
+    res.header('Access-Control-Allow-Headers', 'Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept');
     return res.json(200, songs);
   });
 };
 
 // Get list of songs in a specified album
 exports.indexAlbum = function(req, res) {
-  Song.find()
-  .where('album').equals(req.params.id)
+  console.log(req.params.id);
+  Song.find({"album.albumid" : Number(req.params.id)}, {})
   .exec(function (err, songs) {
+      console.log(songs);
     if(err) { return handleError(res, err); }
+    res.header('Access-Control-Allow-Origin', "*");     // TODO - Make this more secure!!
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST');
+    res.header('Access-Control-Allow-Headers', 'Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept');
     return res.json(200, songs);
   });
 };

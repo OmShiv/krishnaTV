@@ -35,65 +35,12 @@ Thing.find({}).remove(function() {
 });
 
 Song.find({}).remove(function() {
-  Song.create({
-    id : 'cd01t01',
-    title : 'Song Title One',
-    artist : 'Artist One',
-    album: 'cd01',
-    url: 'http://www.schillmania.com/projects/soundmanager2/demo/_mp3/rain.mp3'
-  }, {
-    id : 'cd01t02',
-    title : 'Song Title Two',
-    artist : 'Artist One',
-    album: 'cd01',
-    url: 'http://krishna.tv/index.php?action=download&jz_path=1974+Original+Audio%2F740102SB-LOS+ANGELES.mp3&type=track&ext.html'
-  }, {
-    id : 'cd01t03',
-    title : 'Song Title Three',
-    artist : 'Artist One',
-    album: 'cd01',
-    url: 'http://krishna.tv/index.php?action=download&jz_path=1974+Original+Audio%2F740103MW-LOS+ANGELES.mp3&type=track&ext.html'
-  }, {
-    id : 'cd02t01',
-    title : 'Song Title Four',
-    artist : 'Artist Two',
-    album: 'cd02',
-    url: 'http://krishna.tv/index.php?action=download&jz_path=CDJ1+Japa+CD%2FCDJ+1-1++Group+Japa.mp3&type=track&ext.html'
-  }, {
-    id : 'cd02t02',
-    title : 'Song Title Five',
-    artist : 'Artist Two',
-    album: 'cd02',
-    url: 'http://krishna.tv/index.php?action=download&jz_path=CDJ1+Japa+CD%2FCDJ+1-2++Japa+by+Example.mp3&type=track&ext.html'
-  }, {
-    id : 'cd03t01',
-    title : 'Song Title Six',
-    artist : 'Artist Three',
-    album: 'cd03',
-    url: 'http://krishna.tv/index.php?action=download&jz_path=Bhagavad-gita+Classes%2FBg_00-01_NY_1966-02-19_-20_Intro_1--_to_Bhagavad_Gita.mp3&type=track&ext.html'
-  }, {
-    id : 'cd03t02',
-    title : 'Song Title Seven',
-    artist : 'Artist Three',
-    album: 'cd03',
-    url: 'http://krishna.tv/index.php?action=download&jz_path=Bhagavad-gita+Classes%2FBg_00-02_NY_1966-02-19_-20_Intro_2--_to_Bhagavad_Gita.mp3&type=track&ext.html'
-  }, {
-    id : 'cd03t03',
-    title : 'Song Title Eight',
-    artist : 'Artist Three',
-    album: 'cd03',
-    url: 'http://krishna.tv/index.php?action=download&jz_path=Bhagavad-gita+Classes%2FBg_00-03_NY_1966-02-19_-20_Intro_3--_to_Bhagavad_Gita.mp3&type=track&ext.html'
-  }, {
-    id : 'cd03t04',
-    title : 'Song Title Nine',
-    artist : 'Artist Three',
-    album: 'cd03',
-    url : 'http://krishna.tv/index.php?action=download&jz_path=Bhagavad-gita+Classes%2FBg_00-04_LA_1968-23-11_Intro_to_Bhagavad_Gita_-_--etc.mp3&type=track&ext.html'
-  });
+  var obj = JSON.parse(fs.readFileSync('/Users/amandogra/Work/playground/krishnaTV/json/data/_allSongs.json', 'utf8'));
+  Song.create(obj);
 });
 
 Album.find({}).remove(function() {
-  var obj = JSON.parse(fs.readFileSync('/Users/amandogra/Work/playground/krishnaTV/json/data/_consolidated.json', 'utf8'));
+  var obj = JSON.parse(fs.readFileSync('/Users/amandogra/Work/playground/krishnaTV/json/data/_allAlbum.json', 'utf8'));
   Album.create(obj);
 });
 
