@@ -24,14 +24,19 @@
                 <h2>Aman Dogra</h2>
                 <p>Back off, man. I'm a scientist.</p>
             </a>
+            <!--TODO: Else show the guest/guest and the login menu item-->
             <ion-item menu-close ng-click="login()">
                 Login
             </ion-item>
             <ion-item menu-close href="#/app/albums">
                 Browse
             </ion-item>
+            <ion-item menu-close href="#/app/genres">
+                Genres
+            </ion-item>
+            <!--TODO: Show "My Playlists" only if the user is logged in-->
             <ion-item menu-close href="#/app/playlists">
-                Playlists
+                My Playlists
             </ion-item>
             <div class="list list-inset">
                 <label class="item item-input">

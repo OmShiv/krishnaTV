@@ -41,20 +41,6 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
-  ];
-})
-
-.controller('PlaylistCtrl', function($scope, $stateParams) {
-})
-
 .controller('AlbumsCtrl', function($scope, $stateParams, $window, $ionicLoading, Albums) {
 
     var showLoading = function() {
@@ -96,5 +82,89 @@ angular.module('starter.controllers', [])
     }
 })
 
+  .controller('GenresCtrl', function($scope, $stateParams, $window, $ionicLoading, Genres) {
 
+    var showLoading = function() {
+      $ionicLoading.show({
+        template: '<i class="ion-loading-c"></i>',
+        noBackdrop: true
+      });
+    }
+
+    var hideLoading = function() {
+      $ionicLoading.hide();
+    }
+
+    showLoading();
+
+    Genres.getAllGenres()
+      .then(function (){
+        $scope.genres = Genres.genres;
+        hideLoading();
+      });
+  })
+
+
+  .controller('GenreCtrl', function($scope, $stateParams, Genres, Player) {
+    Genres.getGenre($stateParams.genreId)
+      .then(function () {
+        $scope.genre = Genres.selectedGenre;
+        console.log($scope.genre);
+      })
+      .then(function () {
+        Genres.getSongsInGenre($stateParams.genreId)
+          .then(function () {
+            $scope.genretracks = Genres.selectedGenre.tracks;
+            console.log($scope.genretracks);
+          })
+      });
+
+    $scope.playTrack = function (track) {
+      console.log("playing" + track.url);
+    }
+  })
+
+  /**Playlist related controllers**/
+
+  .controller('PlaylistsCtrl', function($scope, $stateParams, $window, $ionicLoading, Playlists) {
+
+    var showLoading = function() {
+      $ionicLoading.show({
+        template: '<i class="ion-loading-c"></i>',
+        noBackdrop: true
+      });
+    }
+
+    var hideLoading = function() {
+      $ionicLoading.hide();
+    }
+
+    showLoading();
+
+    Playlists.getAllPlaylists()
+      .then(function (){
+        $scope.playlists = Playlists.playlists;
+        hideLoading();
+      });
+  })
+
+
+  .controller('PlaylistCtrl', function($scope, $stateParams, Playlists, Player) {
+    Playlists.getPlaylist($stateParams.playlistId)
+      .then(function () {
+        $scope.playlist = Playlists.selectedPlaylist;
+        console.log($scope.playlist);
+      })
+      .then(function () {
+        Playlists.getSongsInPlaylist($stateParams.playlistId)
+          .then(function () {
+            $scope.playlisttracks = Playlists.selectedPlaylist.tracks;
+            console.log($scope.playlisttracks);
+          })
+      });
+
+    $scope.playTrack = function (track) {
+      console.log("playing" + track.url);
+    }
+  })
 ;

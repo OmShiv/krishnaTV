@@ -1,68 +1,68 @@
 /**
  * Using Rails-like standard naming convention for endpoints.
- * GET     /categories              ->  index
- * POST    /categories              ->  create
- * GET     /categories/:id          ->  show
- * PUT     /categories/:id          ->  update
- * DELETE  /categories/:id          ->  destroy
+ * GET     /playlists              ->  index
+ * POST    /playlists              ->  create
+ * GET     /playlists/:id          ->  show
+ * PUT     /playlists/:id          ->  update
+ * DELETE  /playlists/:id          ->  destroy
  */
 
 'use strict';
 
 var _ = require('lodash');
-var Category = require('./category.model');
+var Playlist = require('./playlist.model');
 
-// Get list of categorys
+// Get list of playlists
 exports.index = function(req, res) {
-  Category.find(function (err, categorys) {
+  Playlist.find(function (err, playlists) {
     if(err) { return handleError(res, err); }
     res.header('Access-Control-Allow-Origin', "*");     // TODO - Make this more secure!!
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST');
     res.header('Access-Control-Allow-Headers', 'Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept');
-    return res.json(200, categorys);
+    return res.json(200, playlists);
   });
 };
 
-// Get a single category
+// Get a single playlist
 exports.show = function(req, res) {
-  Category.findById(req.params.id, function (err, category) {
+  Playlist.findById(req.params.id, function (err, playlist) {
     if(err) { return handleError(res, err); }
-    if(!category) { return res.send(404); }
+    if(!playlist) { return res.send(404); }
     res.header('Access-Control-Allow-Origin', "*");     // TODO - Make this more secure!!
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST');
     res.header('Access-Control-Allow-Headers', 'Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept');
-    return res.json(category);
+    return res.json(playlist);
   });
 };
 
-// Creates a new category in the DB.
+// Creates a new playlist in the DB.
 exports.create = function(req, res) {
-  Category.create(req.body, function(err, category) {
+  Playlist.create(req.body, function(err, playlist) {
     if(err) { return handleError(res, err); }
-    return res.json(201, category);
+    return res.json(201, playlist);
   });
 };
 
-// Updates an existing category in the DB.
+// Updates an existing playlist in the DB.
 exports.update = function(req, res) {
   if(req.body._id) { delete req.body._id; }
-  Category.findById(req.params.id, function (err, category) {
+  Playlist.findById(req.params.id, function (err, playlist) {
     if (err) { return handleError(res, err); }
-    if(!category) { return res.send(404); }
-    var updated = _.merge(category, req.body);
+    if(!playlist) { return res.send(404); }
+    var updated = _.merge(playlist, req.body);
     updated.save(function (err) {
       if (err) { return handleError(res, err); }
-      return res.json(200, category);
+      return res.json(200, playlist);
     });
   });
 };
 
-// Deletes a category from the DB.
+// Deletes a playlist from the DB.
 exports.destroy = function(req, res) {
-  Category.findById(req.params.id, function (err, category) {
+  Playlist.findById(req.params.id, function (err, playlist) {
     if(err) { return handleError(res, err); }
-    if(!category) { return res.send(404); }
-    category.remove(function(err) {
+    if(!playlist) { return res.send(404); }
+    playlist.remove(function(err) {
       if(err) { return handleError(res, err); }
       return res.send(204);
     });

@@ -10,6 +10,7 @@ var User = require('../api/user/user.model');
 var Song = require('../api/song/song.model');
 var Album = require('../api/album/album.model');
 var Category = require('../api/category/category.model');
+var Playlist = require('../api/playlist/playlist.model');
 var fs = require('fs');
 
 Thing.find({}).remove(function() {
@@ -47,15 +48,31 @@ Album.find({}).remove(function() {
 Category.find({}).remove(function() {
   Category.create({
     id : 'at01',
-    title : 'Category Title One'
+    title : 'Kirtan'
   }, {
     id : 'at02',
-    title : 'Category Title Two'
+    title : 'Lectures'
   }, {
     id : 'at03',
-    title : 'Category Title Three'
+    title : 'Morning Walk Talks'
+  }, {
+    id : 'at04',
+    title : 'Morning Walk Talks'
   });
 });
+
+Playlist.find({}).remove(function() {
+  Playlist.create({
+      title: '1973', id: 1
+    }, {
+      title: 'My Favorite lectures', id: 2
+    }, {
+      title: 'Best Kirtans', id: 3
+    }, {
+      title: 'Japa', id: 4
+  });
+});
+
 
 User.find({}).remove(function() {
   User.create({
