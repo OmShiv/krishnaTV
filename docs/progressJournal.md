@@ -18,3 +18,7 @@ Added another script to consolidate the data from the krishna.tv. Added/updated 
 ######Aman Dogra
 The smaller version of the player which is displayed on the footer has been added with 'Play', 'Pause' and 'Seek Bar' functionality.
 Updated the seed data to add the songs as well as albums. Now the complete data has been scrapped from krishna.tv properly per our need. Also, updated the UI of the album details page. Sketch file has also been converted to PNG so that it could be viewed on machines which do not have Sketch installed. The major portion pending is 'Now Playing' page (player-large). Also the login functionality is pending. UI indeed is not final, but the wireframing (mocks) is almost there.
+
+#October 30, 2015 10:12PM
+######Aman Dogra
+Menu items 'Genres' and 'Playlists' are also working now. Songs are yet to be added to Genres and playlists. We also need some mechanism to create new playlists. After this I'll handle the authentication. Once that is done, I'll improve the web view.
