@@ -12,6 +12,7 @@ var Album = require('../api/album/album.model');
 var Category = require('../api/category/category.model');
 var Playlist = require('../api/playlist/playlist.model');
 var fs = require('fs');
+var config = require('./environment');
 
 Thing.find({}).remove(function() {
   Thing.create({
@@ -36,12 +37,12 @@ Thing.find({}).remove(function() {
 });
 
 Song.find({}).remove(function() {
-  var obj = JSON.parse(fs.readFileSync('/Users/amandogra/Work/playground/krishnaTV/json/data/_allSongs.json', 'utf8'));
+  var obj = JSON.parse(fs.readFileSync(config.projectFolder + '/json/data/_allSongs.json', 'utf8'));
   Song.create(obj);
 });
 
 Album.find({}).remove(function() {
-  var obj = JSON.parse(fs.readFileSync('/Users/amandogra/Work/playground/krishnaTV/json/data/_allAlbum.json', 'utf8'));
+  var obj = JSON.parse(fs.readFileSync(config.projectFolder + '/json/data/_allAlbum.json', 'utf8'));
   Album.create(obj);
 });
 
