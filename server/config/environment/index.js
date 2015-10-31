@@ -24,6 +24,9 @@ var all = {
   // Should we populate the DB with sample data?
   seedDB: false,
 
+  //folder for the seedDB
+  projectFolder: '/Users/meenakshidogra/Work/krishnaTV',
+
   // Secret for session, you will want to change this and make it an environment variable
   secrets: {
     session: 'krishnatv-secret'
