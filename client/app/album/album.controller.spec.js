@@ -1,29 +1,29 @@
 'use strict';
 
-describe('Controller: SongListCtrl', function () {
+describe('Controller: AlbumCtrl', function () {
 
   // load the controller's module
   beforeEach(module('krishnatvApp'));
   beforeEach(module('socketMock'));
 
-  var SongListCtrl,
+  var AlbumCtrl,
       scope,
       $httpBackend;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function (_$httpBackend_, $controller, $rootScope) {
     $httpBackend = _$httpBackend_;
-    $httpBackend.expectGET('/api/songs')
+    $httpBackend.expectGET('/api/things')
       .respond(['HTML5 Boilerplate', 'AngularJS', 'Karma', 'Express']);
 
     scope = $rootScope.$new();
-    SongListCtrl = $controller('SongListCtrl', {
+    AlbumCtrl = $controller('AlbumCtrl', {
       $scope: scope
     });
   }));
 
-  it('should attach a list of songs to the scope', function () {
+  it('should attach a list of things to the scope', function () {
     $httpBackend.flush();
-    expect(scope.allSongs.length).toBe(4);
+    expect(scope.awesomeThings.length).toBe(4);
   });
 });
