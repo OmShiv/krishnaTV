@@ -3,11 +3,11 @@
 angular.module('krishnatvApp')
   .controller('NavbarCtrl', function ($scope, $location, Auth) {
     $scope.menu = [{
-      'title': 'Dashboard',
-      'link': '/dashboard'
-    }, {
       'title': 'Albums',
       'link': '/albums'
+    }, {
+      'title': 'Genres',
+      'link': '/genres'
     }];
 
     $scope.isCollapsed = true;

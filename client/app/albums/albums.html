@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-lg-12">
             <div ng-repeat="album in albums" class="col-lg-3" class="col-lg-3">
-                <a href="#/app/albums/{{album.id}}" class="thumbnail-item" >
+                <a href="/albums/{{album.id}}" class="thumbnail-item" >
                     <img ng-src="{{ album.image }}">
                     <p class="thumb-title">{{ album.title }}</p>
                     <p class="thumb-info">{{ album.artist }}</p>

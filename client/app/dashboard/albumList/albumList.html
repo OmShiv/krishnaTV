@@ -1,6 +1,0 @@
-<div class="col-xs-6 col-sm-3 placeholder" ng-modal={{album}} ng-class="{selected : album.id===currentAlbum}" ng-repeat="album in albumsInCategory">
-  <a href="#" ng-click="updateSelectedAlbum(album)"><img data-src="holder.js/200x200/auto/sky" class="img-responsive"  alt="{{album.title}}" />
-  <strong>{{album.title}}</strong>
-  <span class="text-muted">{{album.artist}}</span></a>
-</div>
-<div ng-hide="albumsInCategory.length">No albums in this category</div>

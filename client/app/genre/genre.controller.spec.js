@@ -1,29 +1,29 @@
 'use strict';
 
-describe('Controller: CategoryListCtrl', function () {
+describe('Controller: GenreCtrl', function () {
 
   // load the controller's module
   beforeEach(module('krishnatvApp'));
   beforeEach(module('socketMock'));
 
-  var CategoryListCtrl,
+  var GenreCtrl,
       scope,
       $httpBackend;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function (_$httpBackend_, $controller, $rootScope) {
     $httpBackend = _$httpBackend_;
-    $httpBackend.expectGET('/api/categories')
+    $httpBackend.expectGET('/api/things')
       .respond(['HTML5 Boilerplate', 'AngularJS', 'Karma', 'Express']);
 
     scope = $rootScope.$new();
-    CategoryListCtrl = $controller('CategoryListCtrl', {
+    GenreCtrl = $controller('GenreCtrl', {
       $scope: scope
     });
   }));
 
-  it('should attach a list of categories to the scope', function () {
+  it('should attach a list of things to the scope', function () {
     $httpBackend.flush();
-    expect(scope.allCategories.length).toBe(4);
+    expect(scope.awesomeThings.length).toBe(4);
   });
 });
