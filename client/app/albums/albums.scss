@@ -1,0 +1,17 @@
+.thumbnail-item {
+    min-height: 300px;
+    display: block;
+    img {
+        width: 100%;
+        height: 100%;
+    }
+    .thumb-title {
+        font: normal 14px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
+        color: #222222;
+    }
+    .thumb-info {
+        font: normal 12px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
+        color: #777;
+
+    }
+}
