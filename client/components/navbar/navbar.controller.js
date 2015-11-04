@@ -5,6 +5,9 @@ angular.module('krishnatvApp')
     $scope.menu = [{
       'title': 'Dashboard',
       'link': '/dashboard'
+    }, {
+      'title': 'Albums',
+      'link': '/albums'
     }];
 
     $scope.isCollapsed = true;
