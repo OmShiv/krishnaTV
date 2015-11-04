@@ -27,11 +27,10 @@
 
   <body ng-app="starter">
     <ion-nav-view></ion-nav-view>
-    <ion-footer-bar>
+    <ion-footer-bar ng-if="!!currentPlaying.id">
       <!-- init soundManager2 player -->
       <sound-manager></sound-manager>
-      <p class="player-small-empty-info" ng-if="!currentPlaying.id">Please select a track to play</p>
-      <div class="player-small" ng-if="!!currentPlaying.id">
+      <div class="player-small">
         <div class="seek-base" seek-track>
           <div class="seek-load" ng-style="{width : ( progress + '%' ) }"></div>
         </div>
