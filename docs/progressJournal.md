@@ -22,3 +22,8 @@ Updated the seed data to add the songs as well as albums. Now the complete data 
 #October 30, 2015 10:12PM
 ######Aman Dogra
 Menu items 'Genres' and 'Playlists' are also working now. Songs are yet to be added to Genres and playlists. We also need some mechanism to create new playlists. After this I'll handle the authentication. Once that is done, I'll improve the web view.
+
+#November 03, 2015 11:23PM
+######Aman Dogra
+Added 'albums' module in the web application. I am trying to update the web application too. Once both web and mobile versions are in shape, I'll tlak to Madhuvyasa Prabhu for further analysis. Add album, genre, player modules to web and then work on the login for mobile.
+
