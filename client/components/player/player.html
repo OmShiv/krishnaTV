@@ -1,58 +1,44 @@
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-
-            <!-- init soundManager2 player -->
-            <sound-manager></sound-manager>
-            <div ng-show="!!currentPlaying.id"class="">
-                <p>
-                  Currently Playing: {{ currentPlaying.title }} by {{ currentPlaying.artist }}
-                    ({{ currentPostion }} / {{ currentDuration }})
-                </p>
-            </div>
-
-            <div class="seekBase" seek-track>
-                <div class="seekLoad" ng-style="{width : ( progress + '%' ) }"></div>
-            </div>
-            <br />
-            <button play-music>Play</button>
-            -
-            <button pause-music>Pause</button>
-            -
-            <button stop-music>Stop</button>
-            -
-            <button repeat-music>Repeat ({{ repeat }})</button>
-
-            Is Playing: {{ isPlaying }}
-            <br/>
-            <br/>
-            Volume: {{ volume }}
-            -
-            <button music-volume data-type="increase">+</button>
-            -
-            <button music-volume data-type="decrease">-</button>
-            -
-            <button mute-music>Mute ({{ mute }})</button>
-            <br/>
-            <br/>
-            <button prev-track>Prev Track</button>
-            -
-            <button next-track>Next Track</button>
-            -
-            <button clear-playlist>Clear Playlist</button>
-            <br/>
-            <br/>
+<div class="fixed-bottom">
+    <div class="player-small">
+        <div class="current-playlist-block" ng-show="showPlaylist">
             <h5>Playlist</h5>
             <ul>
                 <li ng-repeat="song in playlist">
-                    <a play-from-playlist="song">{{ song.title }}</a>
-                    -
-                    <a remove-from-playlist="song" data-index="{{$index}}">
-                        <small>(remove)</small>
-                    </a>
-                    <span ng-if="currentPlaying.id == song.id"> - (current)</span>
+                <a play-from-playlist="song">{{ song.title }}</a>
+                -
+                <a remove-from-playlist="song" data-index="{{$index}}">
+                    <small>(remove)</small>
+                </a>
+                <span ng-if="currentPlaying.id == song.id"> - (current)</span>
                 </li>
             </ul>
+        </div>
+        <!-- init soundManager2 player -->
+        <sound-manager></sound-manager>
+        <p class="current-position"> {{ currentPostion }} </p>
+        <p class="duration"> {{ currentDuration }} </p>
+        <a class="player-small-info" href="#">
+            <img src="venkman.jpg">
+            <h2>{{ currentPlaying.title }}</h2>
+            <p>{{ currentPlaying.artist }}</p>
+        </a>
+
+        <div class="seek-base" seek-track>
+            <div class="seek-load" ng-style="{width : ( progress + '%' ) }"></div>
+        </div>
+        <div class="player-controls">
+            <button play-music ng-if="!isPlaying"><i class="glyphicon glyphicon-play"></i></button>
+            <button pause-music ng-if="!!isPlaying"><i class="glyphicon glyphicon-pause"></i></button>
+            <button stop-music><i class="glyphicon glyphicon-stop"></i></button>
+            <button repeat-music><i class="glyphicon glyphicon-repeat"></i></button>
+            <button music-volume data-type="increase">+</button>
+            Volume: {{ volume }}
+            <button music-volume data-type="decrease">-</button>
+            <button mute-music>Mute ({{ mute }})</button>
+            <button prev-track><i class="glyphicon glyphicon-fast-backward"></i></button>
+            <button next-track><i class="glyphicon glyphicon-fast-forward"></i></button>
+            <button clear-playlist>Clear Playlist</button>
+            <button ng-click="showPlaylist = !showPlaylist">Now playing</button>
         </div>
     </div>
 </div>

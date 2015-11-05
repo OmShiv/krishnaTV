@@ -27,6 +27,10 @@ Menu items 'Genres' and 'Playlists' are also working now. Songs are yet to be ad
 ######Aman Dogra
 Added 'albums' module in the web application. I am trying to update the web application too. Once both web and mobile versions are in shape, I'll tlak to Madhuvyasa Prabhu for further analysis. Add album, genre, player modules to web and then work on the login for mobile.
 
-#November 04, 2015 06:53PM
+#November 04, 2015 06:53AM
 ######Aman Dogra
 Genre placeholder, album and player has been added to the web view. Now we have to stylize the player and move the menu items from top nav to side nav. Pending items are search functionality on both web and mobile. Also find a way to introduce the account functionality. It works on the web but not on mobile. Moreover, login is not worth untill we implement 'my playlists' functionality.
+
+#November 04, 2015 05:24PM
+######Aman Dogra
+Some basic styles have been added to the player, so that all the controls look aligned. I should work on the now playing list next. It is to be fixed for both web and mobile. Start with web and then work on mobile.

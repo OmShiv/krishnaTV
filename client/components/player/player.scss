@@ -1,0 +1,94 @@
+.fixed-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    min-height: 70px;
+}
+.player-small {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.player-small .player-small-info {
+  text-decoration: none;
+  position: absolute;
+  top: 24px;
+  left: 10px;
+}
+.player-small .current-position {
+    top: 1px;
+    position: absolute;
+    left: 10px;
+}
+
+.player-small .duration {
+    top: 1px;
+    position: absolute;
+    right: 10px;
+}
+
+.player-small .player-small-info h2 {
+  padding-left: 50px;
+  margin: 0 0 2px 0;
+  font-size: 16px;
+  font-weight: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 85%;
+}
+
+.player-small .player-small-info p {
+  padding-left: 50px;
+  color: #666;
+  max-width: 85%;
+}
+.player-small .player-small-info img {
+  height: 40px;
+  width: 40px;
+  border: 1px solid #ddd;
+  position: absolute;
+  left: 0;
+}
+
+.player-small .player-button {
+  position: absolute;
+  right: 0;
+  font-size: 36px;
+  top: 0;
+  line-height: 1;
+  padding: 7px 16px;
+  cursor: pointer;
+}
+
+.player-small-empty-info {
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  padding-top: 10px;
+}
+.player-controls {
+    position: absolute;
+    right: 10px;
+    top: 24px;
+}
+.seek-base {
+  height: 5px;
+  background-color: #E0EAF1;
+  margin: -5px -5px 5px;
+  position: absolute;
+  top:0;
+  left:0;
+  right:0;
+}
+
+.seek-load {
+  height: 5px;
+  width: 0;
+  background-color: #21BF64;
+}
+
+
