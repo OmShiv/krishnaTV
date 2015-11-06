@@ -34,3 +34,7 @@ Genre placeholder, album and player has been added to the web view. Now we have 
 #November 04, 2015 05:24PM
 ######Aman Dogra
 Some basic styles have been added to the player, so that all the controls look aligned. I should work on the now playing list next. It is to be fixed for both web and mobile. Start with web and then work on mobile.
+
+#November 06, 2015 07:34AM
+######Aman Dogra
+Added a new template for the landing page. A lot of text changes and text styles is required. Also added the current playlist to the player. somehow the list is not getting activated by clicking the "now playing" button on the player. Need to fix that. The inside of the now playing list needs some stylilng. Same changes are required on mobile view. Player is still not working on Safari.
