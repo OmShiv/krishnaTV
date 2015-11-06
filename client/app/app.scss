@@ -15,6 +15,13 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
     padding: 0.2em 0;
 }
 
+.footer {
+    text-align: center;
+    padding: 30px 0 100px;
+    margin-top: 70px;
+    border-top: 1px solid #E5E5E5;
+}
+
 // Component styles are injected through grunt
 // injector
 @import 'account/login/login.scss';

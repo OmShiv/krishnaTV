@@ -1,4 +1,6 @@
-<div class="fixed-bottom">
+<!-- init soundManager2 player -->
+<sound-manager></sound-manager>
+<div class="fixed-bottom" ng-if="currentPlaying.id">
     <div class="player-small">
         <div class="current-playlist-block" ng-show="showPlaylist">
             <h5>Playlist</h5>
@@ -13,8 +15,7 @@
                 </li>
             </ul>
         </div>
-        <!-- init soundManager2 player -->
-        <sound-manager></sound-manager>
+        
         <p class="current-position"> {{ currentPostion }} </p>
         <p class="duration"> {{ currentDuration }} </p>
         <a class="player-small-info" href="#">

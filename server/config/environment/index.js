@@ -25,7 +25,7 @@ var all = {
   seedDB: false,
 
   //folder for the seedDB
-  projectFolder: '/Users/meenakshidogra/Work/krishnaTV',
+  projectFolder: '/Users/amandogra/Work/playground/krishnaTV',
 
   // Secret for session, you will want to change this and make it an environment variable
   secrets: {
