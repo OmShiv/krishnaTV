@@ -92,4 +92,13 @@
   background-color: #21BF64;
 }
 
+.current-playlist-block {
+  position: fixed;
+  top: 0;
+  bottom: 75px;
+  right: 0;
+  width: 30%;
+  background: #e5e5e8;
+  z-index: 1100;
+}
 

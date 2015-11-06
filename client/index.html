@@ -11,6 +11,9 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- Google web fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:900' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400italic' rel='stylesheet' type='text/css'>
     <!-- build:css(client) app/vendor.css -->
       <!-- bower:css -->
       <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
@@ -37,14 +40,7 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div ui-view=""></div>
-
-    <!--Copyright footer-->
-    <footer class="footer">
-      <div class="container">
-          <p>&copy; 2013. All copyrights reserved with <a href="#">KrishnaTV.com</a>. Please visit <a href="http://krishnastore.com">Krishna Store</a> for everyhting you need to practice <a href="http://www.krishna.com/krishna-consciousness">Krishna Consciousness</a> at home.</p>
-      </div>
-    </footer>
+    <div ui-view="" class="full-height"></div>
 
     <!--Player in the footer-->
     <div ng-include="'components/player/player.html'"></div>
@@ -109,8 +105,18 @@
           <script src="app/genre/genre.js"></script>
           <script src="app/genres/genres.controller.js"></script>
           <script src="app/genres/genres.js"></script>
+          <script src="app/main/js/bootstrap.min.js"></script>
+          <script src="app/main/js/cbpAnimatedHeader.js"></script>
+          <script src="app/main/js/classie.js"></script>
+          <script src="app/main/js/creative.js"></script>
+          <script src="app/main/js/jquery.easing.min.js"></script>
+          <script src="app/main/js/jquery.fittext.js"></script>
+          <script src="app/main/js/jquery.js"></script>
+          <script src="app/main/js/wow.min.js"></script>
           <script src="app/main/main.controller.js"></script>
           <script src="app/main/main.js"></script>
+          <script src="app/queue/queue.controller.js"></script>
+          <script src="app/queue/queue.js"></script>
           <script src="components/auth/auth.service.js"></script>
           <script src="components/auth/user.service.js"></script>
           <script src="components/modal/modal.service.js"></script>

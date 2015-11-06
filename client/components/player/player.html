@@ -2,19 +2,6 @@
 <sound-manager></sound-manager>
 <div class="fixed-bottom" ng-if="currentPlaying.id">
     <div class="player-small">
-        <div class="current-playlist-block" ng-show="showPlaylist">
-            <h5>Playlist</h5>
-            <ul>
-                <li ng-repeat="song in playlist">
-                <a play-from-playlist="song">{{ song.title }}</a>
-                -
-                <a remove-from-playlist="song" data-index="{{$index}}">
-                    <small>(remove)</small>
-                </a>
-                <span ng-if="currentPlaying.id == song.id"> - (current)</span>
-                </li>
-            </ul>
-        </div>
         
         <p class="current-position"> {{ currentPostion }} </p>
         <p class="duration"> {{ currentDuration }} </p>
@@ -42,4 +29,17 @@
             <button ng-click="showPlaylist = !showPlaylist">Now playing</button>
         </div>
     </div>
+</div>
+<div class="current-playlist-block" ng-show="showPlaylist">
+    <h5>Playlist</h5>
+    <ul>
+        <li ng-repeat="song in playlist">
+        <a play-from-playlist="song">{{ song.title }}</a>
+        -
+        <a remove-from-playlist="song" data-index="{{$index}}">
+            <small>(remove)</small>
+        </a>
+        <span ng-if="currentPlaying.id == song.id"> - (current)</span>
+        </li>
+    </ul>
 </div>
