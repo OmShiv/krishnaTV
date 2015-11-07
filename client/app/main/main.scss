@@ -3,6 +3,7 @@
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
+$header-color: #22313F;
 
 html,
 body {
@@ -80,7 +81,7 @@ aside {
 }
 
 .navbar-default {
-    border-color: rgba(34,34,34,.05);
+    border-color: transparent;
     font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
     background-color: #fff;
     -webkit-transition: all .35s;
@@ -126,8 +127,8 @@ aside {
 
 @media(min-width:768px) {
     .navbar-default {
-        border-color: rgba(255,255,255,.3);
-        background-color: transparent;
+        border-color: transparent;
+        background-color: $header-color;
     }
 
     .navbar-default .navbar-header .navbar-brand {
@@ -181,13 +182,13 @@ header {
     min-height: auto;
     text-align: center;
     color: #fff;
-    background-image: url(../../assets/images/header.jpg);
+    background-image: url(../../assets/images/header1.jpg);
     background-position: center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
-    backgorund-color: #6C7A89;
+    background-color: $header-color;
 }
 
 header .header-content {
@@ -200,8 +201,14 @@ header .header-content {
 header .header-content .header-content-inner h1 {
     margin-top: 0;
     margin-bottom: 0;
-    text-transform: uppercase;
+    // text-transform: uppercase;
     font-weight: 700;
+    color: #f1cf63;
+    text-align: center;
+    font-family: Source Sans Pro, sans-serif;
+    line-height: 1;
+    padding: 0;
+
 }
 
 header .header-content .header-content-inner hr {
@@ -217,7 +224,7 @@ header .header-content .header-content-inner p {
 
 header {
     .sos-r1 {
-      font-size: 10em;
+      font-size: 6em;
       font-weight: 900;
       line-height: 1.1em;
     }
@@ -495,4 +502,8 @@ img::-moz-selection {
 
 body {
     webkit-tap-highlight-color: #222;
+}
+
+.with-top-buffer {
+    padding-top: 80px;
 }

@@ -38,3 +38,7 @@ Some basic styles have been added to the player, so that all the controls look a
 #November 06, 2015 07:34AM
 ######Aman Dogra
 Added a new template for the landing page. A lot of text changes and text styles is required. Also added the current playlist to the player. somehow the list is not getting activated by clicking the "now playing" button on the player. Need to fix that. The inside of the now playing list needs some stylilng. Same changes are required on mobile view. Player is still not working on Safari.
+
+#November 06, 2015 05:18PM
+######Aman Dogra
+Added the 'albums' and 'genre' links to the sidebar. Added the stylized the sidebar. Added some colors to the theme.
