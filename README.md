@@ -1,11 +1,11 @@
 # krishnaTV
-I am trying to convert http://www.krishna.tv website into a more intuitive webapp. Along the way I am trying to create a generic media player webapp. 
+[KrishnaTV](http://www.krishna.tv) website as a more intuitive webapp. 
 For this project MEAN (Mongo/Express/AngularJs/NodeJS) technology stack has been used
 
 ## Quick start
 1. Clone or download zip this repository
   ```
-  git clone https://github.com/amandogra/krishnaTV.git
+  git clone https://github.com/OmShiv/krishnaTV.git
   ```
 
 2. Run mongo DB locally. (Install mongodb if neccessary from http://docs.mongodb.org/manual/installation/)
